@@ -32,7 +32,15 @@ const libmpdec = dlopen(path, {
   },
   mpd_div:{
     args: [FFIType.ptr,FFIType.ptr,FFIType.ptr,FFIType.ptr]
+  }, 
+  mpd_to_eng:{
+    args: [FFIType.ptr,FFIType.int],
+    returns: FFIType.ptr    
+  }, // engineering string representation of a decimal
+  mpd_del:{
+    args: [FFIType.ptr]
   }
+ // frees all storage allocated for a decimal
 });
 
 const precision= 10

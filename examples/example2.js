@@ -18,3 +18,5 @@ a.print()
 
 let b= x.div(y)
 b.print()
+
+console.log(typeof(x))
