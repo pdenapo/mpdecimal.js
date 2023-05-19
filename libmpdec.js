@@ -23,6 +23,15 @@ const libmpdec = dlopen(path, {
   },
   mpd_add:{
     args: [FFIType.ptr,FFIType.ptr,FFIType.ptr,FFIType.ptr]
+  },
+  mpd_sub:{
+    args: [FFIType.ptr,FFIType.ptr,FFIType.ptr,FFIType.ptr]
+  },
+  mpd_mul:{
+    args: [FFIType.ptr,FFIType.ptr,FFIType.ptr,FFIType.ptr]
+  },
+  mpd_div:{
+    args: [FFIType.ptr,FFIType.ptr,FFIType.ptr,FFIType.ptr]
   }
 });
 
