@@ -1,0 +1,1 @@
+export {mpdecimal} from "./libmpdec.js";
