@@ -20,6 +20,7 @@ test("2 + 2=4", () => {
     let x = new Decimal(2)
     let y = new Decimal('2')
     let z = x.add(y)
+    console.log("vivo")
     expect(
         z.toString()
     ).toBe("4");

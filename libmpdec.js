@@ -2,6 +2,14 @@ import { dlopen, FFIType, suffix,ptr} from "bun:ffi";
 
 const path = `libmpdec.${suffix}`;
 
+const path_libc= "libc.so.6"
+
+const libc = dlopen(path_libc, {
+  free:{
+    args:[FFIType.ptr]
+  }
+})
+
 const libmpdec = dlopen(path, {
     // Library version
     mpd_version: {
@@ -45,3 +53,5 @@ const libmpdec = dlopen(path, {
 
 const precision= 10
 export const mpdecimal= libmpdec.symbols
+export const std_lib = libc.symbols
+

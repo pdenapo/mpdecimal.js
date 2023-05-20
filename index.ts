@@ -1,2 +1,2 @@
-export {mpdecimal} from "./libmpdec.js";
-export {Decimal,decimal_init} from "./decimal.js";
+export * from "./libmpdec.js";
+export * from "./decimal.js";
