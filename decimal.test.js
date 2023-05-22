@@ -1,19 +1,19 @@
-import {Decimal,decimal_init} from "mpdecimal.js";
+import { Decimal, decimal_init } from "mpdecimal.js";
 //import { expect, test } from "bun:test";
 
 decimal_init(10)
 
-test("undefined",()=>{
+test("undefined", () => {
     let x = new Decimal()
     expect(
         x.toString()
     ).toBe("undefined");
     let y = new Decimal(2)
-    expect(x.add(y).toString() ).toBe("undefined");
-    expect(y.add(x).toString() ).toBe("undefined");
-    expect(x.sub(y).toString() ).toBe("undefined");
-    expect(x.mul(y).toString() ).toBe("undefined");
-    expect(x.div(y).toString() ).toBe("undefined");
+    expect(x.add(y).toString()).toBe("undefined");
+    expect(y.add(x).toString()).toBe("undefined");
+    expect(x.sub(y).toString()).toBe("undefined");
+    expect(x.mul(y).toString()).toBe("undefined");
+    expect(x.div(y).toString()).toBe("undefined");
 })
 
 test("2 + 2=4", () => {
@@ -52,3 +52,8 @@ test("10 /2 = 5", () => {
         z.toString()
     ).toBe("5");
 });
+
+test("Json", () => {
+    let x = new Decimal(10)
+    expect(JSON.stringify(x)).toBe("\"10\"");
+})
