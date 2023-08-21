@@ -122,3 +122,31 @@ test("trunc(-10.5)= -10", () => {
     ).toBe("-10");
 });
 
+test("1<2", () => {
+    let x = new Decimal(1)
+    let y = new Decimal(2)
+    expect(x.cmp(y)).toBe(-1);
+    expect(x.is_less_than(y)).toBe(true);
+    expect(x.is_greater_than(y)).toBe(false);
+    expect(x.is_equal_to(y)).toBe(false);
+});
+
+test("2<1", () => {
+    let x = new Decimal(2)
+    let y = new Decimal(1)
+    expect(x.cmp(y)).toBe(1);
+    expect(x.is_less_than(y)).toBe(false);
+    expect(x.is_greater_than(y)).toBe(true);
+    expect(x.is_equal_to(y)).toBe(false);
+});
+
+test("1==1", () => {
+    let x = new Decimal(1)
+    let y = new Decimal(1)
+    expect(x.cmp(y)).toBe(0);
+    expect(x.is_less_than(y)).toBe(false);
+    expect(x.is_greater_than(y)).toBe(false);
+    expect(x.is_equal_to(y)).toBe(true);
+});
+
+

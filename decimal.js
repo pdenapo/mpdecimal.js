@@ -103,6 +103,25 @@ export class Decimal {
     }
     return result_object
   }
+  cmp(y) {
+    let result_object = new Decimal()
+    if ((this.value !== undefined) && (y.value !== undefined)) {
+      return mpdecimal.mpd_cmp(this.value, y.value, decimal_ctx)
+    }
+    return undefined
+  }
+  is_less_than(y)
+  {
+    return this.cmp(y) == -1 
+  }
+  is_greater_than(y)
+  {
+    return this.cmp(y) == 1 
+  }
+  is_equal_to(y)
+  {
+    return this.cmp(y) == 0
+  }
   toString() {
     if (this.value !== undefined) {
       const result = mpdecimal.mpd_to_eng(this.value, 0);  // 0 = exponential in lower case

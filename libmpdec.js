@@ -57,6 +57,10 @@ const libmpdec = dlopen(path, {
     args: [FFIType.ptr,FFIType.int],
     returns: FFIType.ptr    
   }, // engineering string representation of a decimal
+  mpd_cmp:{
+    args: [FFIType.ptr,FFIType.ptr,FFIType.ptr],
+    returns: FFIType.int    
+  }, 
   mpd_del:{
     args: [FFIType.ptr]
   }
