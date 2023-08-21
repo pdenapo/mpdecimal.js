@@ -114,6 +114,42 @@ export class Decimal {
     }
     else
       return "undefined"
+    }
+  abs() {
+    let result_object = new Decimal()
+    if (this.value !== undefined) {
+      const result = new_value(result_object)
+      mpdecimal.mpd_abs(result, this.value,decimal_ctx)
+      result_object.value = result
+    }
+    return result_object
+  }
+  floor() {
+    let result_object = new Decimal()
+    if (this.value !== undefined) {
+      const result = new_value(result_object)
+      mpdecimal.mpd_floor(result, this.value,decimal_ctx)
+      result_object.value = result
+    }
+    return result_object
+  }
+  ceil() {
+    let result_object = new Decimal()
+    if (this.value !== undefined) {
+      const result = new_value(result_object)
+      mpdecimal.mpd_ceil(result, this.value,decimal_ctx)
+      result_object.value = result
+    }
+    return result_object
+  }
+  trunc() {
+    let result_object = new Decimal()
+    if (this.value !== undefined) {
+      const result = new_value(result_object)
+      mpdecimal.mpd_trunc(result, this.value,decimal_ctx)
+      result_object.value = result
+    }
+    return result_object
   }
   toJSON() {
     return this.toString();
